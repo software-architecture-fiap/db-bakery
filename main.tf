@@ -1,24 +1,29 @@
-resource "aws_dynamodb_table" "tech_challenge" {
-  name         = var.tech_challenge
+resource "aws_dynamodb_table" "customers" {
+  name         = "customers"
   read_capacity = var.read_capacity
   write_capacity = var.write_capacity
 
   attribute {
-    name = var.partition_key_name
-    type = var.partition_key_type
+    name = "id"
+    type = "S"
   }
 
-  hash_key = var.partition_key_name
+  hash_key = "id"
 
-  dynamic "attribute" {
-    for_each = var.sort_key_name != null ? [1] : []
-    content {
-      name = var.sort_key_name
-      type = var.sort_key_type
-    }
+  attribute {
+    name = "email"
+    type = "S"
   }
 
-  range_key = var.sort_key_name != null ? var.sort_key_name : null
+  attribute {
+    name = "cpf"
+    type = "S"
+  }
+
+  attribute {
+    name = "hashed_password"
+    type = "S"
+  }
 
   lifecycle {
     prevent_destroy = true
