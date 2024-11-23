@@ -1,7 +1,8 @@
 resource "aws_dynamodb_table" "customers" {
-  name         = "customers"
-  read_capacity = var.read_capacity
-  write_capacity = var.write_capacity
+  name             = "customers"
+  read_capacity    = var.read_capacity
+  write_capacity   = var.write_capacity
+  billing_mode     = "PROVISIONED"
 
   attribute {
     name = "id"
