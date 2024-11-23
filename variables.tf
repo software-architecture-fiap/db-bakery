@@ -4,6 +4,12 @@ variable "tech_challenge" {
   default = "customers"
 }
 
+variable "aws_region" {
+  description = "AWS Region where resources will be created"
+  type        = string
+  default     = "us-east-1"
+}
+
 variable "partition_key_name" {
   description = "Partition key name for the DynamoDB table"
   type        = string
