@@ -1,11 +1,13 @@
 variable "tech_challenge" {
   description = "Name of the DynamoDB table"
   type        = string
+  default = "customers"
 }
 
 variable "partition_key_name" {
   description = "Partition key name for the DynamoDB table"
   type        = string
+  default = "PK"
 }
 
 variable "partition_key_type" {
@@ -23,6 +25,7 @@ variable "environment" {
 variable "project_name" {
   description = "Project Name Tag"
   type        = string
+  default = "tech_challenge"
 }
 
 variable "read_capacity" {
