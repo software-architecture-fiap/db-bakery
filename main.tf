@@ -11,6 +11,11 @@ resource "aws_dynamodb_table" "customers" {
   hash_key = "id"
 
   attribute {
+    name = "name"
+    type = "S"
+  }
+
+  attribute {
     name = "email"
     type = "S"
   }
@@ -23,6 +28,30 @@ resource "aws_dynamodb_table" "customers" {
   attribute {
     name = "hashed_password"
     type = "S"
+  }
+
+  global_secondary_index {
+    name               = "name-index"
+    hash_key           = "name"
+    projection_type    = "ALL"
+    read_capacity      = 5
+    write_capacity     = 5
+  }
+
+  global_secondary_index {
+    name               = "email-index"
+    hash_key           = "email"
+    projection_type    = "ALL"
+    read_capacity      = 5
+    write_capacity     = 5
+  }
+
+  global_secondary_index {
+    name               = "cpf-index"
+    hash_key           = "cpf"
+    projection_type    = "ALL"
+    read_capacity      = 5
+    write_capacity     = 5
   }
 
   lifecycle {
