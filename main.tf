@@ -26,11 +26,6 @@ resource "aws_dynamodb_table" "customers" {
     type = "S"
   }
 
-  attribute {
-    name = "hashed_password"
-    type = "S"
-  }
-
   global_secondary_index {
     name               = "name-index"
     hash_key           = "name"
