@@ -3,13 +3,6 @@ resource "aws_dynamodb_table" "customers" {
   read_capacity    = var.read_capacity
   write_capacity   = var.write_capacity
 
-  attribute {
-    name = "id"
-    type = "S"
-  }
-
-  hash_key = "id"
-
   lifecycle {
     prevent_destroy = true
   }
