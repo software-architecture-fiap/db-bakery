@@ -22,7 +22,7 @@ resource "aws_security_group" "rds_sg" {
   }
 }
 
-resource "aws_db_instance" "customers_db" {
+resource "aws_db_instance" "customers" {
   identifier         = var.rds_instance_identifier
   instance_class     = var.rds_instance_class
   engine             = var.rds_engine
