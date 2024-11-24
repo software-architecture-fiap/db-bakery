@@ -20,3 +20,19 @@ resource "aws_iam_policy" "dynamodb_access_policy" {
     ]
   })
 }
+
+resource "aws_iam_policy" "dynamodb_describe_table" {
+  name        = "DynamoDBDescribeTablePolicy"
+  description = "Policy to allow DescribeTable action on customers table"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "dynamodb:DescribeTable"
+        Resource = "arn:aws:dynamodb:us-east-1:830714066230:table/customers"
+      }
+    ]
+  })
+}
