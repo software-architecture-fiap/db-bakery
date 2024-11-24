@@ -19,13 +19,13 @@ variable "rds_instance_class" {
 variable "rds_engine" {
   description = "RDS database engine"
   type        = string
-  default     = "postgres"
+  default     = "mysql"
 }
 
 variable "rds_engine_version" {
   description = "Engine version for the RDS instance"
   type        = string
-  default     = "15.2"
+  default     = "8.0.33"
 }
 
 variable "rds_username" {
