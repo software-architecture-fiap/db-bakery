@@ -6,7 +6,7 @@ resource "aws_db_instance" "postgres" {
   db_name                 = "challenge"
   username                = "postgres"
   password                = "Localhost1988!"
-  parameter_group_name    = "default.postgres14"
+  parameter_group_name    = "default.postgres16"
   publicly_accessible     = false
   skip_final_snapshot     = true
   storage_type            = "gp2"
