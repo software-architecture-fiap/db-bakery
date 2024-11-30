@@ -5,7 +5,7 @@ resource "aws_db_instance" "postgres" {
   instance_class          = "db.t4g.micro"
   db_name                 = "challenge"
   username                = "postgres"
-  password                = "localhost@1988"
+  password                = "Localhost1988!"
   parameter_group_name    = "default.postgres14"
   publicly_accessible     = false
   skip_final_snapshot     = true
